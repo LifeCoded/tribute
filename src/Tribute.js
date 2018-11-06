@@ -9,7 +9,7 @@ class Tribute {
         values = null,
         iframe = null,
         selectClass = 'highlight',
-        trigger = '@',
+        trigger = '#',
         selectTemplate = null,
         menuItemTemplate = null,
         lookup = 'key',
