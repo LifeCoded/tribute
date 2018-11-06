@@ -21,7 +21,7 @@ class Tribute {
         allowSpaces = false,
         replaceTextSuffix = null,
         positionMenu = true,
-        appendTag = null
+        onSelectItem = null
     }) {
 
         this.menuSelected = 0
@@ -32,7 +32,7 @@ class Tribute {
         this.allowSpaces = allowSpaces
         this.replaceTextSuffix = replaceTextSuffix
         this.positionMenu = positionMenu
-        this.appendTag = appendTag;
+        this.onSelectItem = onSelectItem;
 
         if (values) {
             this.collection = [{
@@ -349,7 +349,7 @@ class Tribute {
         let content = this.current.collection.selectTemplate(item)
         if (content !== null) {
           this.replaceText(content, originalEvent, item)
-          if (this.appendTag) this.appendTag(content);
+          if (this.onSelectItem) this.onSelectItem(content);
         }
     }
 

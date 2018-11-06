@@ -64,8 +64,8 @@ var Tribute = function () {
             replaceTextSuffix = _ref$replaceTextSuffi === undefined ? null : _ref$replaceTextSuffi,
             _ref$positionMenu = _ref.positionMenu,
             positionMenu = _ref$positionMenu === undefined ? true : _ref$positionMenu,
-            _ref$appendTag = _ref.appendTag,
-            appendTag = _ref$appendTag === undefined ? null : _ref$appendTag;
+            _ref$onSelectItem = _ref.onSelectItem,
+            onSelectItem = _ref$onSelectItem === undefined ? null : _ref$onSelectItem;
 
         _classCallCheck(this, Tribute);
 
@@ -77,7 +77,7 @@ var Tribute = function () {
         this.allowSpaces = allowSpaces;
         this.replaceTextSuffix = replaceTextSuffix;
         this.positionMenu = positionMenu;
-        this.appendTag = appendTag;
+        this.onSelectItem = onSelectItem;
 
         if (values) {
             this.collection = [{
@@ -391,7 +391,7 @@ var Tribute = function () {
             var content = this.current.collection.selectTemplate(item);
             if (content !== null) {
                 this.replaceText(content, originalEvent, item);
-                if (this.appendTag) this.appendTag(content);
+                if (this.onSelectItem) this.onSelectItem(content);
             }
         }
     }, {
