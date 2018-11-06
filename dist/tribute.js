@@ -63,7 +63,9 @@ var Tribute = function () {
             _ref$replaceTextSuffi = _ref.replaceTextSuffix,
             replaceTextSuffix = _ref$replaceTextSuffi === undefined ? null : _ref$replaceTextSuffi,
             _ref$positionMenu = _ref.positionMenu,
-            positionMenu = _ref$positionMenu === undefined ? true : _ref$positionMenu;
+            positionMenu = _ref$positionMenu === undefined ? true : _ref$positionMenu,
+            _ref$appendTag = _ref.appendTag,
+            appendTag = _ref$appendTag === undefined ? null : _ref$appendTag;
 
         _classCallCheck(this, Tribute);
 
@@ -75,6 +77,7 @@ var Tribute = function () {
         this.allowSpaces = allowSpaces;
         this.replaceTextSuffix = replaceTextSuffix;
         this.positionMenu = positionMenu;
+        this.appendTag = appendTag;
 
         if (values) {
             this.collection = [{
@@ -386,7 +389,10 @@ var Tribute = function () {
             if (typeof index !== 'number') return;
             var item = this.current.filteredItems[index];
             var content = this.current.collection.selectTemplate(item);
-            if (content !== null) this.replaceText(content, originalEvent, item);
+            if (content !== null) {
+                this.replaceText(content, originalEvent, item);
+                if (this.appendTag) this.appendTag(content);
+            }
         }
     }, {
         key: "replaceText",
