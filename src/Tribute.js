@@ -21,7 +21,8 @@ class Tribute {
         allowSpaces = false,
         replaceTextSuffix = null,
         positionMenu = true,
-        onSelectItem = null
+        onSelectItem = null,
+        containerClass = ''
     }) {
 
         this.menuSelected = 0
@@ -33,7 +34,8 @@ class Tribute {
         this.replaceTextSuffix = replaceTextSuffix
         this.positionMenu = positionMenu
         this.onSelectItem = onSelectItem;
-
+        this.containerClass = containerClass;
+        
         if (values) {
             this.collection = [{
                 // symbol that starts the lookup
@@ -176,6 +178,9 @@ class Tribute {
         wrapper.className = 'tribute-container'
         wrapper.appendChild(ul)
 
+        if (this.containerClass) {
+          wrapper.className = wrapper.className + ` ${this.containerClass}`;
+        }
         if (this.menuContainer) {
             return this.menuContainer.appendChild(wrapper)
         }

@@ -65,7 +65,9 @@ var Tribute = function () {
             _ref$positionMenu = _ref.positionMenu,
             positionMenu = _ref$positionMenu === undefined ? true : _ref$positionMenu,
             _ref$onSelectItem = _ref.onSelectItem,
-            onSelectItem = _ref$onSelectItem === undefined ? null : _ref$onSelectItem;
+            onSelectItem = _ref$onSelectItem === undefined ? null : _ref$onSelectItem,
+            _ref$containerClass = _ref.containerClass,
+            containerClass = _ref$containerClass === undefined ? '' : _ref$containerClass;
 
         _classCallCheck(this, Tribute);
 
@@ -78,6 +80,7 @@ var Tribute = function () {
         this.replaceTextSuffix = replaceTextSuffix;
         this.positionMenu = positionMenu;
         this.onSelectItem = onSelectItem;
+        this.containerClass = containerClass;
 
         if (values) {
             this.collection = [{
@@ -208,6 +211,9 @@ var Tribute = function () {
             wrapper.className = 'tribute-container';
             wrapper.appendChild(ul);
 
+            if (this.containerClass) {
+                wrapper.className = wrapper.className + (" " + this.containerClass);
+            }
             if (this.menuContainer) {
                 return this.menuContainer.appendChild(wrapper);
             }
