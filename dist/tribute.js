@@ -467,15 +467,15 @@ var Tribute = function () {
         value: function defaultSelectTemplate(item) {
             if (typeof item === 'undefined') return null;
             if (this.range.isContentEditable(this.current.element)) {
-                return this.current.collection.trigger + item.original[this.current.collection.fillAttr];
+                return this.current.collection.trigger + item[this.current.collection.fillAttr];
             }
 
-            return this.current.collection.trigger + item.original[this.current.collection.fillAttr];
+            return this.current.collection.trigger + item[this.current.collection.fillAttr];
         }
     }, {
         key: "defaultMenuItemTemplate",
         value: function defaultMenuItemTemplate(matchItem) {
-            return matchItem.string;
+            return matchItem.string || matchItem.value;
         }
     }, {
         key: "inputTypes",
