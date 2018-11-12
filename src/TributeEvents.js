@@ -23,6 +23,9 @@ class TributeEvents {
         }, {
             key: 40,
             value: 'DOWN'
+        }, {
+            key: 32,
+            value: 'SPACE'
         }]
     }
 
@@ -193,6 +196,9 @@ class TributeEvents {
                     this.tribute.isActive = false
                     this.tribute.hideMenu()
                 }
+            },
+            space: (e, el) => {
+                this.callbacks().escape(e, el)
             },
             tab: (e, el) => {
                 // choose first match

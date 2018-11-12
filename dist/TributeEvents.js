@@ -192,6 +192,9 @@ var TributeEvents = function () {
                         _this.tribute.hideMenu();
                     }
                 },
+                space: function space(e, el) {
+                    _this.callbacks().escape(e, el);
+                },
                 tab: function tab(e, el) {
                     // choose first match
                     _this.callbacks().enter(e, el);
@@ -305,6 +308,9 @@ var TributeEvents = function () {
             }, {
                 key: 40,
                 value: 'DOWN'
+            }, {
+                key: 32,
+                value: 'SPACE'
             }];
         }
     }]);
