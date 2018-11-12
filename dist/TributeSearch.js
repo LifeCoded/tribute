@@ -20,8 +20,9 @@ var TributeSearch = function () {
     _createClass(TributeSearch, [{
         key: 'simpleFilter',
         value: function simpleFilter(pattern, array) {
-            return array.filter(function (string) {
-                return string.toLowerCase().includes(pattern.toLowerCase());
+            return array.filter(function (_ref) {
+                var value = _ref.value;
+                return value.toLowerCase().includes(pattern.toLowerCase());
             });
         }
     }, {
