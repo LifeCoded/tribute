@@ -198,7 +198,10 @@ class TributeEvents {
                 }
             },
             space: (e, el) => {
-                this.callbacks().escape(e, el)
+                if (this.tribute.isActive) {
+                  this.tribute.isActive = false
+                  this.tribute.hideMenu()
+                }
             },
             tab: (e, el) => {
                 // choose first match

@@ -193,7 +193,10 @@ var TributeEvents = function () {
                     }
                 },
                 space: function space(e, el) {
-                    _this.callbacks().escape(e, el);
+                    if (_this.tribute.isActive) {
+                        _this.tribute.isActive = false;
+                        _this.tribute.hideMenu();
+                    }
                 },
                 tab: function tab(e, el) {
                     // choose first match
