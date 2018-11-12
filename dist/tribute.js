@@ -251,20 +251,7 @@ var Tribute = function () {
                     return;
                 }
 
-                var items = _this2.search.filter(_this2.current.mentionText, values, {
-                    pre: '<span>',
-                    post: '</span>',
-                    extract: function extract(el) {
-                        if (typeof _this2.current.collection.lookup === 'string') {
-                            return el[_this2.current.collection.lookup];
-                        } else if (typeof _this2.current.collection.lookup === 'function') {
-                            return _this2.current.collection.lookup(el);
-                        } else {
-                            throw new Error('Invalid lookup attribute, lookup must be string or function.');
-                        }
-                    }
-                });
-
+                var items = _this2.search.simpleFilter(_this2.current.mentionText, values);
                 _this2.current.filteredItems = items;
 
                 var ul = _this2.menu.querySelector('ul');

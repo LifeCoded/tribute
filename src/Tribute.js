@@ -215,20 +215,7 @@ class Tribute {
                 return
             }
 
-            let items = this.search.filter(this.current.mentionText, values, {
-                pre: '<span>',
-                post: '</span>',
-                extract: (el) => {
-                    if (typeof this.current.collection.lookup === 'string') {
-                        return el[this.current.collection.lookup]
-                    } else if (typeof this.current.collection.lookup === 'function') {
-                        return this.current.collection.lookup(el)
-                    } else {
-                        throw new Error('Invalid lookup attribute, lookup must be string or function.')
-                    }
-                }
-            })
-
+            let items = this.search.simpleFilter(this.current.mentionText, values)
             this.current.filteredItems = items
 
 

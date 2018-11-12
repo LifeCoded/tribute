@@ -20,10 +20,8 @@ var TributeSearch = function () {
     _createClass(TributeSearch, [{
         key: 'simpleFilter',
         value: function simpleFilter(pattern, array) {
-            var _this = this;
-
             return array.filter(function (string) {
-                return _this.test(pattern, string);
+                return string.toLowerCase().includes(pattern.toLowerCase());
             });
         }
     }, {
@@ -134,7 +132,7 @@ var TributeSearch = function () {
     }, {
         key: 'filter',
         value: function filter(pattern, arr, opts) {
-            var _this2 = this;
+            var _this = this;
 
             opts = opts || {};
             return arr.reduce(function (prev, element, idx, arr) {
@@ -149,7 +147,7 @@ var TributeSearch = function () {
                     }
                 }
 
-                var rendered = _this2.match(pattern, str, opts);
+                var rendered = _this.match(pattern, str, opts);
 
                 if (rendered != null) {
                     prev[prev.length] = {

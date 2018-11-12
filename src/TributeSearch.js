@@ -6,9 +6,9 @@ class TributeSearch {
     }
 
     simpleFilter(pattern, array) {
-        return array.filter(string => {
-            return this.test(pattern, string)
-        })
+        return array.filter(string =>
+          string.toLowerCase().includes(pattern.toLowerCase())
+        )
     }
 
     test(pattern, string) {
